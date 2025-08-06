@@ -9,6 +9,7 @@ RUN apt install -y openssh-server mc psmisc net-tools wget sudo && \
 
 RUN mkdir -p /var/run/sshd
 
+# SET UTF8 LOCALE
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     dpkg-reconfigure --frontend=noninteractive locales && \
     update-locale LANG=en_US.UTF-8
